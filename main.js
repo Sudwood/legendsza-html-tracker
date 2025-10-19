@@ -7,126 +7,123 @@ let pokemonArr = []
 const numbers = [5,10,15,20,25,3,8,3,8,3,8,3,8,3,8,3,8,3,8,3,8,3,8,3,8,3,8,1,1,1,3,1,1,5,10,20,50]
 let he1 = null
 let wi1 = null
-    // Your code to run after the HTML document is fully loaded and parsed goes here
-    const pokemonArrayString = localStorage.getItem('pokemonArray');
-    const taskArrayString = localStorage.getItem('taskArray');
-    if (pokemonArrayString) 
+const pokemonArrayString = localStorage.getItem('pokemonArray');
+const taskArrayString = localStorage.getItem('taskArray');
+if (pokemonArrayString) 
+{
+    pokemonArr = JSON.parse(pokemonArrayString);
+}
+else
+{
+    for(x in PokeNames)
     {
-        pokemonArr = JSON.parse(pokemonArrayString);
+        pokemonArr[x] = 0
     }
-    else
+}
+if (taskArrayString) 
+{
+    taskArr = JSON.parse(taskArrayString);
+}
+else
+{
+    for(x in tasks)
     {
-        for(x in PokeNames)
+        taskArr[x] = 0
+    }
+}
+if(pokemonArr.length!== 0)
+{
+    for(x in pokemonArr)
+    {
+        checkbox = document.getElementById(PokeNames[x])
+        if(pokemonArr[x] == 0)
         {
-            pokemonArr[x] = 0
+            checkbox.checked = false
+        }
+        if(pokemonArr[x] == 1)
+        {
+            checkbox.checked = true
         }
     }
-    if (taskArrayString) 
+}
+if(taskArr.length!== 0)
+{
+    for(x in taskArr)
     {
-        taskArr = JSON.parse(taskArrayString);
-    }
-    else
-    {
-        for(x in tasks)
+        input = document.getElementById(tasks[x])
+        if(x == 27 || x == 28 || x == 29 || x == 32 || x == 31)
         {
-            taskArr[x] = 0
-        }
-    }
-    if(pokemonArr.length!== 0)
-    {
-        for(x in pokemonArr)
-        {
-            checkbox = document.getElementById(PokeNames[x])
-            if(pokemonArr[x] == 0)
+            if(taskArr[x] == 0)
             {
-                checkbox.checked = false
+                input.checked = false
             }
-            if(pokemonArr[x] == 1)
+            if(taskArr[x] == 1)
             {
-                checkbox.checked = true
+                input.checked = true
             }
         }
-    }
-    if(taskArr.length!== 0)
-    {
-        for(x in taskArr)
+        else
         {
-            input = document.getElementById(tasks[x])
-            if(x == 27 || x == 28 || x == 29 || x == 32 || x == 31)
-            {
-                if(taskArr[x] == 0)
-                {
-                    input.checked = false
-                }
-                if(taskArr[x] == 1)
-                {
-                    input.checked = true
-                }
-            }
-            else
-            {
-                input.value = taskArr[x]
-            }
+            input.value = taskArr[x]
         }
     }
-    console.log("loaded")
-    
-    
-    const windowElement = document.getElementById('floatingWindow');
-    const header = windowElement.querySelector('.window-header');
-    let isDragging = false;
-    let offsetX, offsetY;
-    const collapseButton = document.getElementById('collapseButton');
-    const shouldHideString = localStorage.getItem('shouldHide');
+}
+console.log("loaded")
 
-    // Toggle Collapse Functionality
-    if (collapseButton && windowElement) {
-        // Toggle Collapse Functionality
-        collapseButton.addEventListener('click', () => {
-           
-            // Toggles the 'collapsed' class on the main window element
-            windowElement.classList.toggle('collapsed');
-            const windowContent = document.getElementById("windowContent")
-            
-            // Optional: Change the button text/symbol
-            if (windowElement.classList.contains('collapsed')) {
-                collapseButton.textContent = '+'; // Symbol for 'Expand'
-                // Optional: You might want to stop the drag functionality
-                // if only the header remains visible.
-                windowElement.style.opacity = 0.55
-                windowContent.style.display = 'none'
-                localStorage.setItem('shouldHide',"1");
-                
-            } else {
-                collapseButton.textContent = '---'; // Symbol for 'Collapse'
-                windowElement.style.opacity = 1
-                windowContent.style.display = 'inline'
-                localStorage.setItem('shouldHide',"0");
-            }
-        });
-    }
 
-    header.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        // Calculate the offset from the mouse to the window's top-left corner
-        offsetX = e.clientX - windowElement.getBoundingClientRect().left;
-        offsetY = e.clientY - windowElement.getBoundingClientRect().top;
-        // Set 'absolute' position if it was 'fixed' to allow dragging
+const windowElement = document.getElementById('floatingWindow');
+const header = windowElement.querySelector('.window-header');
+let isDragging = false;
+let offsetX, offsetY;
+const collapseButton = document.getElementById('collapseButton');
+const shouldHideString = localStorage.getItem('shouldHide');
+
+
+if (collapseButton && windowElement) {
+
+    collapseButton.addEventListener('click', () => {
         
-    });
 
-    document.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        // Update the window's position based on mouse movement
-        windowElement.style.left = `${e.clientX - offsetX}px`;
-        windowElement.style.top = `${e.clientY - offsetY}px`;
-    });
+        windowElement.classList.toggle('collapsed');
+        const windowContent = document.getElementById("windowContent")
+        
 
-    document.addEventListener('mouseup', () => {
-        isDragging = false;
+        if (windowElement.classList.contains('collapsed')) {
+            collapseButton.textContent = '+';
+
+            windowElement.style.opacity = 0.55
+            windowContent.style.display = 'none'
+            localStorage.setItem('shouldHide',"1");
+            
+        } else {
+            collapseButton.textContent = '---';
+            windowElement.style.opacity = 1
+            windowContent.style.display = 'inline'
+            localStorage.setItem('shouldHide',"0");
+        }
     });
-    // Example: Select an element and change its text
-    // document.getElementById('myElement').textContent = 'Content Loaded!';
+}
+
+header.addEventListener('mousedown', (e) => {
+    isDragging = true;
+
+    offsetX = e.clientX - windowElement.getBoundingClientRect().left;
+    offsetY = e.clientY - windowElement.getBoundingClientRect().top;
+
+    
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+
+    windowElement.style.left = `${e.clientX - offsetX}px`;
+    windowElement.style.top = `${e.clientY - offsetY}px`;
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+});
+
 
 updateFloatingValues()
 if(shouldHideString!=null)
@@ -137,21 +134,18 @@ if(shouldHideString!=null)
     }
     else if(shouldHideString == "1")
     {
-            // Toggles the 'collapsed' class on the main window element
+
         windowElement.classList.toggle('collapsed');
         const windowContent = document.getElementById("windowContent")
-        
-        // Optional: Change the button text/symbol
+     
         if (windowElement.classList.contains('collapsed')) {
-            collapseButton.textContent = '+'; // Symbol for 'Expand'
-            // Optional: You might want to stop the drag functionality
-            // if only the header remains visible.
+            collapseButton.textContent = '+';
             windowElement.style.opacity = 0.55
             windowContent.style.display = 'none'
             localStorage.setItem('shouldHide',"1");
             
         } else {
-            collapseButton.textContent = '---'; // Symbol for 'Collapse'
+            collapseButton.textContent = '---';
             windowElement.style.opacity = 1
             windowContent.style.display = 'inline'
             localStorage.setItem('shouldHide',"0");
@@ -159,16 +153,15 @@ if(shouldHideString!=null)
     }
 }
 PokeNames.forEach(id => {
-  // 1. Select the element using its ID
+
   const inputElement = document.getElementById(id);
 
-  // 2. Check if the element exists before trying to add a listener
+
   if (inputElement) {
-    // 3. Add the 'change' event listener
+
     inputElement.addEventListener('change', handleChangePoke);
     
-    // 💡 Tip: Use 'input' instead of 'change' for real-time feedback
-    // inputElement.addEventListener('input', handleChange); 
+
   } else {
     console.warn(`Element with ID "${id}" not found in the DOM.`);
   }
@@ -176,16 +169,14 @@ PokeNames.forEach(id => {
 
 
 tasks.forEach(id => {
-  // 1. Select the element using its ID
+
   const inputElement = document.getElementById(id);
-  // 2. Check if the element exists before trying to add a listener
+
   if (inputElement) {
-    // 3. Add the 'change' event listener
-    //(x == 27 || x == 28 || x == 29 || x == 32)
+
     inputElement.addEventListener('change', handleChangeTasks);
     
-    // 💡 Tip: Use 'input' instead of 'change' for real-time feedback
-    // inputElement.addEventListener('input', handleChange); 
+
   } else {
     console.warn(`Element with ID "${id}" not found in the DOM.`);
   }
@@ -198,7 +189,7 @@ function handleChangePoke(event) {
   pokemonArr[index] = newValue
   localStorage.setItem('pokemonArray', JSON.stringify(pokemonArr));
   updateFloatingValues()
-  // You can add your form handling/validation logic here
+
 }
 
 
@@ -220,7 +211,7 @@ function handleChangeTasks(event) {
     }
     localStorage.setItem('taskArray', JSON.stringify(taskArr));
     updateFloatingValues()
-  // You can add your form handling/validation logic here
+
 }
 function updateFloatingValues()
 {
