@@ -51,14 +51,14 @@ htmlString+=tableStart
 htmlString+=tbStart
 
 for name in file_names:
-    
+    withoutPng = name.split(".")[0]
     if(item_iter == 0):
         htmlString+=trStart
         htmlString+=tdStart
         htmlString+=imgStart
         htmlString+=name
         htmlString+=imgEndNameStart
-        htmlString+=name
+        htmlString+=withoutPng
         htmlString+=nameEndIdStart
         htmlString+=name
         htmlString+=IdEnd
@@ -69,7 +69,7 @@ for name in file_names:
         htmlString+=imgStart
         htmlString+=name
         htmlString+=imgEndNameStart
-        htmlString+=name
+        htmlString+=withoutPng
         htmlString+=nameEndIdStart
         htmlString+=name
         htmlString+=IdEnd
@@ -81,7 +81,7 @@ for name in file_names:
         htmlString+=imgStart
         htmlString+=name
         htmlString+=imgEndNameStart
-        htmlString+=name
+        htmlString+=withoutPng
         htmlString+=nameEndIdStart
         htmlString+=name
         htmlString+=IdEnd
