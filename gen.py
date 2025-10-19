@@ -51,6 +51,8 @@ htmlString+=tableStart
 htmlString+=tbStart
 
 for name in file_names:
+    if(name == ".gitkeep"):
+        continue
     withoutPng = name.split(".")[0]
     if(item_iter == 0):
         htmlString+=trStart
