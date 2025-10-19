@@ -1,6 +1,6 @@
 # legendsza-html-tracker
 A simple tracker for pokemon legends ZA - Tracks pokedex and tasks and saves the values in your browser
-
+![Example Image](example1.png)
 # App Info
 This app uses no javascript libraries for the functionality everything runs local. The only libraries used were in the python generation file.
 Gemini was used soley for javascript syntax as it has been a long time since I worked with getting document elements and manipulating them with vanilla javascript. I wrote the funcitons myself.
@@ -28,3 +28,4 @@ tasks.txt contains the concated task names, objectives, and point rewards and wa
 rewards.txt contains the point rewards for each task sorted by task
 
 Feel free to modify anything I made this for myself and Just wanted it shareable. 
+![Example Image](example2.png)
