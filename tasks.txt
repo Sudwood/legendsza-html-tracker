@@ -1,0 +1,37 @@
+Filling Your Pokédex (01):Register 5 Pokémon in your Pokédex by either catching or evolving them.|100 pts
+Filling Your Pokédex (02):Register 10 Pokémon in your Pokédex.|300 pts
+Filling Your Pokédex (03):Register 15 Pokémon in your Pokédex.|300 pts
+Filling Your Pokédex (04):Register 20 Pokémon in your Pokédex.|300 pts
+Filling Your Pokédex (05):Register 25 Pokémon in your Pokédex.|300 pts
+Catching Normal Types (01):Catch 3 Normal-type Pokémon.|300 pts
+Catching Normal Types (02):Catch 8 Normal-type Pokémon.|300 pts
+Catching Fire Types (01):Catch 3 Fire-type Pokémon.|300 pts
+Catching Fire Types (02):Catch 8 Fire-type Pokémon.|300 pts
+Catching Water Types (01):Catch 3 Water-type Pokémon.|300 pts
+Catching Water Types (02):Catch 8 Water-type Pokémon.|300 pts
+Catching Electric Types (01):Catch 3 Electric-type Pokémon.|300 pts
+Catching Electric Types (02):Catch 8 Electric-type Pokémon.|300 pts
+Catching Grass Types (01):Catch 3 Grass-type Pokémon.|300 pts
+Catching Grass Types (02):Catch 8 Grass-type Pokémon.|300 pts
+Catching Flying Types (01):Catch 3 Flying-type Pokémon.|300 pts
+Catching Flying Types (02):Catch 8 Flying-type Pokémon.|300 pts
+Catching Bug Types (01):Catch 3 Bug-type Pokémon.|300 pts
+Catching Bug Types (02):Catch 8 Bug-type Pokémon.|300 pts
+Catching Poison Types (01):Catch 3 Poison-type Pokémon.|300 pts
+Catching Poison Types (02):Catch 8 Poison-type Pokémon.|300 pts
+Catching Ground Types (01):Catch 3 Ground-type Pokémon.|300 pts
+Catching Ground Types (02):Catch 8 Ground-type Pokémon.|300 pts
+Catching Rock Types (01):Catch 3 Rock-type Pokémon.|300 pts
+Catching Rock Types (02):Catch 8 Rock-type Pokémon.|300 pts
+Catching Ghost Types (01):Catch 3 Ghost-type Pokémon.|300 pts
+Catching Ghost Types (02):Catch 8 Ghost-type Pokémon.|300 pts
+Surveying Wild Zone 1:Register all Pokémon who appear in Wild Zone 1 in your Pokédex.|1,000 pts
+Surveying Wild Zone 2:Register all Pokémon who appear in Wild Zone 2 in your Pokédex.|1,000 pts
+Surveying Wild Zone 3:Register all Pokémon who appear in Wild Zone 3 in your Pokédex.|1,000 pts
+Evolving Pokémon (01):Evolve 3 Pokémon by any method.|500 pts
+Evolving with Items (01):Use Evolution Stones or other items to evolve 1 Pokémon.|500 pts
+Evolving via Link Trade:Receive a Pokémon that evolves after a Link Trade.|2,000 pts
+Winning Pokémon Battles (01):Win 5 Pokémon battles against other Trainers.|200 pts
+Winning Pokémon Battles (02):Win 10 Pokémon battles against other Trainers.|200 pts
+Smashing Mega Crystals (01):Break 20 Mega Crystals around Lumiose City.|100 pts
+Smashing Mega Crystals (02):Break 50 Mega Crystals around Lumiose City.|100 pts
